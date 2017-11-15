@@ -17,7 +17,7 @@ public class Stream : MonoBehaviour
         if (other.transform.tag == "GoalBox")
         {
             print("filling");
-            goalBox.Fill();
+            //goalBox.Fill();
         }
         
     }
@@ -25,7 +25,7 @@ public class Stream : MonoBehaviour
     
     void OnParticleTrigger()
     {
-        goalBox.Fill();
+        //goalBox.Fill();
     }
     
 }

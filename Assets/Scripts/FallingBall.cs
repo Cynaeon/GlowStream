@@ -7,6 +7,7 @@ public class FallingBall : MonoBehaviour {
 	public float maxVelocity;
 	public Transform startPoint;
 
+    private List<GameObject> collectedTrinkets = new List<GameObject>();
     private float teleportCooldown;
 	private Vector3 velocityVector;
 	private Rigidbody _rb;
@@ -40,14 +41,14 @@ public class FallingBall : MonoBehaviour {
     {
         transform.position = startPoint.position;
         _rb.velocity = Vector3.zero;
+        foreach (GameObject trinket in collectedTrinkets)
+        {
+            trinket.SetActive(true);
+        }
+        collectedTrinkets.Clear();
     }
-
     private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Bounce")
-		{
-
-		}
 
         if (other.tag == "GoalBox")
         {
@@ -62,6 +63,12 @@ public class FallingBall : MonoBehaviour {
                 transform.position = other.gameObject.GetComponent<Teleport>().pair.position;
                 teleportCooldown = 1;
             }
+        }
+
+        if (other.tag == "Trinket")
+        {
+            collectedTrinkets.Add(other.gameObject);
+            other.gameObject.SetActive(false);
         }
  	}
 }

@@ -15,12 +15,10 @@ public class BuildObjects : MonoBehaviour {
 	public int selected;
     public GameObject selectedObject;
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown("Tab"))
 		{
