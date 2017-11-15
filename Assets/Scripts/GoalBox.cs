@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class GoalBox : MonoBehaviour {
     public Transform fill;
     public float currentFill;
     public float drainRate;
+    public GameObject goalEffect;
+    public GoalLight goalLight;
 
     private float startPos;
     private float maxFill = 1.6f;
@@ -36,5 +39,12 @@ public class GoalBox : MonoBehaviour {
     {
         if (currentFill < maxFill)
             currentFill += 0.01f;
+    }
+
+    internal void GoalEffects()
+    {
+        Instantiate(goalEffect, transform.position, Quaternion.identity);
+        goalLight.Activate();
+
     }
 }

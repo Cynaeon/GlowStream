@@ -7,6 +7,7 @@ TagManager:
   - Stream
   - BuildSpots
   - GoalBox
+  - Teleport
   layers:
   - Default
   - TransparentFX

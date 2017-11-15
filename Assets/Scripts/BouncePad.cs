@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BouncePad : MonoBehaviour {
 
+    
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,7 +13,7 @@ public class BouncePad : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+		
 
         
 	}

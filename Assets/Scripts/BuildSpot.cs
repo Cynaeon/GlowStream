@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildSpot : MonoBehaviour {
 
-    public GameObject bouncePad;
+    public BuildObjects buildObjects;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +19,7 @@ public class BuildSpot : MonoBehaviour {
     private void OnMouseDown()
     {
         Vector3 pos = new Vector3(transform.position.x, transform.position.y, 0);
-        Instantiate(bouncePad, pos, Quaternion.identity);
+        Instantiate(buildObjects.selectedObject, pos, Quaternion.identity);
     }
 
 }
