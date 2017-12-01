@@ -33,6 +33,8 @@ public class FallingBall : MonoBehaviour {
         {
             teleportCooldown -= Time.deltaTime;
         }
+
+        // Lock the z position to 0
 		transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 		_rb.velocity = new Vector3(_rb.velocity.x, _rb.velocity.y, 0);
 	}
@@ -47,6 +49,7 @@ public class FallingBall : MonoBehaviour {
         }
         collectedTrinkets.Clear();
     }
+
     private void OnTriggerEnter(Collider other)
 	{
 
